@@ -9,7 +9,7 @@ type NavlinkProp = {
 
 function Navlink({to, children}: NavlinkProp) {
   return (
-    <li><Link href={to}>{children}</Link></li>
+    <li className='hover:scale-105 transition-all'><Link href={to}>{children}</Link></li>
   )
 }
 
