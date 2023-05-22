@@ -1,6 +1,5 @@
 import React, { ReactNode, useEffect, useState } from 'react'
 import Navbar from '../Navbar/Navbar'
-import { Material } from '@/pages/materials'
 import { Dish } from '@/pages/dishes'
 
 type ListProps<T> = {
@@ -9,7 +8,7 @@ type ListProps<T> = {
     Component: React.FC<T>
 }
 
-function ListItems({Component, filterQuery, data}: ListProps<Material>) {
+function ListItems({Component, filterQuery, data}: ListProps<Dish>) {
   const [displayedData, setDisplayedData] = useState<any[]>(data)
   const [query, setQuery] = useState<string>("")
 
