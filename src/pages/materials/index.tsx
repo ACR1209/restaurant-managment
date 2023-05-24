@@ -9,9 +9,9 @@ import React from "react";
 export type Material = {
   id: string;
   name: string;
-  stock: number;
+  stock?: number;
   unit: string;
-  price_unit: number;
+  price_unit?: number;
 };
 
 type MaterialsProps = {

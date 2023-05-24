@@ -35,11 +35,10 @@ function Dishes({ dishes, error }: DishesProps) {
 
 export default Dishes;
 
-
 export const getServerSideProps: GetServerSideProps = async (ctx) => {
-    let dishes: Dish[] = [];
-    let error: string = "";
-    /*
+  let dishes: Dish[] = [];
+  let error: string = "";
+  /*
     await axios
       .get(`${process.env.BACKEND}/dishes`)
       .then((res) => {
@@ -49,65 +48,24 @@ export const getServerSideProps: GetServerSideProps = async (ctx) => {
         error = err;
       });
       */
-      dishes = [
+  dishes = [
+    {
+      id: "1",
+      name: "Pizza",
+      pvp: 10.99,
+      cost: 8.9,
+      materials: [
         {
-            id: "1",
-            cost: 2.5,
-            name: "Pasta con hongos",
-            pvp: 3.5,
-            materials: [
-                {
-                    material: { id: "1", name: "Tomate", price_unit: 0.6, unit: "GR", stock: 1000 },
-                    amount: 500
-                },
-                {
-                    material: { id: "1", name: "Tomate", price_unit: 0.6, unit: "GR", stock: 1000 },
-                    amount: 500
-                },
-                {
-                    material: { id: "1", name: "Tomate", price_unit: 0.6, unit: "GR", stock: 1000 },
-                    amount: 500
-                },
-                {
-                    material: { id: "1", name: "Tomate", price_unit: 0.6, unit: "GR", stock: 1000 },
-                    amount: 500
-                },
-                {
-                    material: { id: "1", name: "Tomate", price_unit: 0.6, unit: "GR", stock: 1000 },
-                    amount: 500
-                },
-                {
-                    material: { id: "1", name: "Tomate", price_unit: 0.6, unit: "GR", stock: 1000 },
-                    amount: 500
-                },
-                {
-                    material: { id: "1", name: "Tomate", price_unit: 0.6, unit: "GR", stock: 1000 },
-                    amount: 500
-                },
-                {
-                    material: { id: "1", name: "Tomate", price_unit: 0.6, unit: "GR", stock: 1000 },
-                    amount: 500
-                },
-                {
-                    material: { id: "1", name: "Tomate", price_unit: 0.6, unit: "GR", stock: 1000 },
-                    amount: 500
-                },
-                {
-                    material: { id: "1", name: "Tomate", price_unit: 0.6, unit: "GR", stock: 1000 },
-                    amount: 500
-                },
-                {
-                    material: { id: "1", name: "Tomate", price_unit: 0.6, unit: "GR", stock: 1000 },
-                    amount: 500
-                },
-            ]
-        }
-
-    ];
-    return {
-      props: {
-        dishes,
-        error,
-      },
-    };
-}
+          amount: 300,
+          material: { id: "1", name: "Tomate", unit: "GR" },
+        },
+      ],
+    },
+  ];
+  return {
+    props: {
+      dishes,
+      error,
+    },
+  };
+};

@@ -1,8 +1,9 @@
 import { Dish } from "@/pages/dishes";
+import Link from "next/link";
 import React from "react";
 import { HiPencil, HiTrash } from "react-icons/hi";
 
-function DishItem({ name, pvp, cost, materials }: Dish) {
+function DishItem({ id, name, pvp, cost, materials }: Dish) {
   return (
     <div className="flex justify-between shadow-md p-5">
       <div>
@@ -16,17 +17,19 @@ function DishItem({ name, pvp, cost, materials }: Dish) {
       <div className="w-1/3">
         <h4 className="font-bold text-xl">Ingredientes:</h4>
         <p className="text-clip">
-        {materials.map((m) => (
+          {materials.map((m) => (
             <>
-            {m.amount}
-            {m.material.unit} {m.material.name},
+              {m.amount}
+              {m.material.unit} {m.material.name},
             </>
-        ))}
+          ))}
         </p>
       </div>
 
       <div className="flex items-center text-4xl">
-        <HiPencil className="text-blue-600 cursor-pointer hover:scale-105 transition-all" />
+        <Link href={`/dishes/edit/${id}`}>
+          <HiPencil className="text-blue-600 cursor-pointer hover:scale-105 transition-all" />
+        </Link>
         <HiTrash className="text-red-normal cursor-pointer hover:scale-105 transition-all" />
       </div>
     </div>
