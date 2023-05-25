@@ -1,4 +1,5 @@
 import { Material } from '@/pages/materials'
+import Link from 'next/link'
 import React from 'react'
 import {HiPencil, HiTrash} from 'react-icons/hi'
 
@@ -15,7 +16,7 @@ function MaterialItem({id, name, stock, unit, price_unit}: Material) {
         </p>
       </div>
       <div className='flex items-center text-4xl'>
-        <HiPencil className='text-blue-600 cursor-pointer hover:scale-105 transition-all'/>
+        <Link href={`/materials/edit/${id}`}><HiPencil className='text-blue-600 cursor-pointer hover:scale-105 transition-all'/></Link>
         <HiTrash className='text-red-normal cursor-pointer hover:scale-105 transition-all'/>
       </div>
     </div>
