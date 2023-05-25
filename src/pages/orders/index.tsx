@@ -6,6 +6,9 @@ import { GetServerSideProps } from 'next';
 import MaterialItem from '@/components/MaterialItem/MaterialItem';
 import ListOrders from '@/components/ListOrders/ListOrders';
 import OrderItem from '@/components/OrderItem/OrderItem';
+import { BsFillPlusSquareFill } from "react-icons/bs";
+import { useRouter } from 'next/router';
+
 
 export type Order = {
   materials: Material[]
@@ -26,10 +29,24 @@ type OrderProps = {
 }
 
 function Orders({orders, error}: OrderProps) {
+  const router = useRouter();
+
+  const handleClick = () => {
+    const currentURI = router.asPath; // Obtiene el URI actual
+    const newURI = `${currentURI}/createOrder`; // Agrega "/createOrder" al URI actual
+    router.push(newURI); // Redirige al nuevo URI
+  };
+
   return (
      <>
-     <Navbar></Navbar>
-     <BreadCrumb></BreadCrumb>
+     <Navbar/>
+     <div className='flex justify-between bg-slate-900'>
+     <BreadCrumb/>
+     <button className='p-2' onClick={handleClick}>
+      <BsFillPlusSquareFill className='w-10 h-fit bg-white'/>
+     </button>
+     
+     </div>
      <ListOrders orders={orders} Component={OrderItem}></ListOrders
      
      >
