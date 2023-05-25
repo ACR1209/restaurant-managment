@@ -33,7 +33,7 @@ function DishInput() {
           className="bg-gray-normal p-2 w-full"
         />
       </div>
-      
+
       <div className="flex items-end w-80">
         <button className="w-40 bg-blue-500 p-2 font-bold">Agregar</button>
       </div>

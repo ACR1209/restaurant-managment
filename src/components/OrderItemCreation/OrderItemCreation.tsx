@@ -26,17 +26,20 @@ function OrderItem({
             </div>
           </div>
         </div>
-        <div className="flex items-end w-30">
-        <div >
-          <input
-            type="number"
-            //value={}
-            //onChange={}
-            placeholder="#1"
-            className="bg-gray-white p-2 w-full "
-          />
-        </div>
 
+        <div className="flex items-end w-30 space-x-10 text-lg">
+          <div>
+            <p>Subtotal: </p>
+          </div>
+          <div>
+            <input
+              type="number"
+              //value={}
+              //onChange={}
+              placeholder="#1"
+              className="bg-gray-white p-2 w-full "
+            />
+          </div>
         </div>
       </div>
     </div>
